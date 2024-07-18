@@ -51,8 +51,8 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
-            'body' => 'required',
+            'title' => 'nullable',
+            'body' => 'nullable',
         ]);
 
         $post = $this->postService->createPost($request->all());
@@ -101,9 +101,10 @@ class PostController extends Controller
      * Remove the specified resource from storage.
      */
 
-     public function twoposts($parameter1, $parameter2){
+    public function twoposts($parameter1, $parameter2)
+    {
         // "Parameter 1 is : ". $parameter1 . "";
-     }
+    }
     public function destroy(string $id)
     {
 

@@ -4,6 +4,10 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Services\PostService;
+use App\Models\Post;
+
+use App\Observers\PostObserver;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -12,6 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        //service class
         $this->app->singleton(PostService::class, function ($app) {
             return new PostService();
         });
@@ -22,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        //post observer
+        Post::observe(PostObserver::class);
     }
 }

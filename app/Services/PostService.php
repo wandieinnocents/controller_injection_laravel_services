@@ -11,9 +11,6 @@ class PostService
         return Post::all();
     }
 
-
-
-
     public function getPostById($id)
     {
         return Post::findOrFail($id);
