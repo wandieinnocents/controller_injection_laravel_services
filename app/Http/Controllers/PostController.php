@@ -28,8 +28,8 @@ class PostController extends Controller
         //references getAllPosts method from post service class
         $posts = $this->postService->getAllPosts();
 
-        $name = "john";
-        dd($posts->toArray());
+        // $name = "john";
+        // dd($posts->toArray());
         return response()->json($posts);
         // return view('posts.index', compact('posts'));
 

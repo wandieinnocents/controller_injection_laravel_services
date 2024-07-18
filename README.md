@@ -49,5 +49,5 @@ Localization in Laravel allows you to manage and display your application in dif
 
 - create a file in : resources/lang/en/messages.php
 - You can set the default locale in the config/app.php file by modifying the locale option: ie to en or es, or change in .env
-
+- reference it in your views
 
