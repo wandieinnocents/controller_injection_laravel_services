@@ -4,6 +4,8 @@ use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ArticleController;
+
 
 
 
@@ -18,3 +20,4 @@ Route::get('/twoposts/{parameter1}/{parameter2}', 'App\Http\Controllers\PostCont
 
 Route::resource('products', ProductController::class);
 Route::resource('categories', CategoryController::class);
+Route::resource('articles', ArticleController::class);

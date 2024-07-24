@@ -58,14 +58,28 @@ Eloquent is the Object-Relational Mapper (ORM) included with Laravel. It provide
 
 In Laravel, a relationship is a way to define the connection between two database tables. Laravel provides a powerful and expressive ORM (Object-Relational Mapping) called Eloquent, which makes it easy to interact with the database and define relationships. Eloquent relationships allow you to query related data and work with your database using an object-oriented approach.
 
-# One to One relationships
+# One to One relationships & Many To Many
 - php artisan make:model Product -m
 - php artisan make:model Category -m
 - php artisan make:controller ProductController --resource
 - php artisan make:controller CategoryController --resource
+- create the views for the products crud
+- create the views for the categories crud
+
 
 ## key Points
 - One-to-One: One record in the first table is related to one and only one record in the second table.
 - One-to-Many: One record in the first table is related to multiple records in the second table
 - One-to-One: Used when there is a strict one-to-one correspondence between records
 - One-to-Many: Used when one record in the first table can have multiple associated records in the second table.
+
+## Many To Many Relationships
+- Article Table: php artisan make:model Article -m
+- Tage Table : php artisan make:model Tag -m
+- Pivot Table ; php artisan make:migration create_article_tag_table --create=article_tag
+- php artisan make:controller ArticleController --resource
+- create the views for the articles crud
+
+## Add data to your database for testing, Add Tags to tags table
+- capture name ( add 4 tags)
+
