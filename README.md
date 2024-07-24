@@ -54,11 +54,12 @@ Localization in Laravel allows you to manage and display your application in dif
 
 ## ELOQUENT RELATIONSHIPS 
 
+
 Eloquent is the Object-Relational Mapper (ORM) included with Laravel. It provides a simple and intuitive Active Record implementation for working with your database. Each database table has a corresponding "Model" that is used to interact with that table. Eloquent models allow you to query for data in your tables, as well as insert new records into the table.
 
 In Laravel, a relationship is a way to define the connection between two database tables. Laravel provides a powerful and expressive ORM (Object-Relational Mapping) called Eloquent, which makes it easy to interact with the database and define relationships. Eloquent relationships allow you to query related data and work with your database using an object-oriented approach.
 
-# One to One relationships & Many To Many
+# One to One relationships & One To Many
 - php artisan make:model Product -m
 - php artisan make:model Category -m
 - php artisan make:controller ProductController --resource
@@ -82,4 +83,5 @@ In Laravel, a relationship is a way to define the connection between two databas
 
 ## Add data to your database for testing, Add Tags to tags table
 - capture name ( add 4 tags)
+- Test the many to many relationships
 

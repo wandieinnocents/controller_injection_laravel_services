@@ -11,6 +11,7 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::with('tags')->get();
+        // return $articles;
         return view('articles.index', compact('articles'));
     }
 
