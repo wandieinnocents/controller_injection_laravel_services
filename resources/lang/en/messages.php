@@ -9,5 +9,6 @@ return [
     'goodbye' => 'Goodbye!',
     'username' => 'Username',
     'password' => 'Password',
-    'login' => 'Login',
+    'login' => 'Login Customer',
+    'need_help' => 'Need help?',
 ];

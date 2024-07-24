@@ -20,6 +20,7 @@
     <h1>{{ __('messages.welcome') }}</h1>
     <h1>{{ __('messages.greeting') }}</h1>
     <p>{{ __('messages.goodbye') }}</p>
+    <button>{{ __('messages.need_help') }}</button>
 </body>
 
 </html>

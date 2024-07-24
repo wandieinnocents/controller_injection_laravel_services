@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Support\Facades\Log;
 
 
@@ -15,6 +16,7 @@ class PostObserver
 
     public function creating(Post $post)
     {
+        //check 1
         if (empty($post->title)) {
             $post->title = 'Random title if empty';
             $post->body = 'Random body if empty';
@@ -29,8 +31,9 @@ class PostObserver
 
     public function created(Post $post): void
     {
+        // dd("testing observer");
         //  test if this action will run
-        Log::info('After  saving! Lol.. Post created with ID: ' . $post->id);
+        Log::info(' Post created with Title: ' . $post->title);
     }
 
     /**
