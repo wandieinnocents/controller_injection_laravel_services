@@ -1,6 +1,6 @@
 
 
-## Resource Controllers
+## 1. Resource Controllers
 
 ## Creating a resource controller
 - php artisan make:controller Product -r
@@ -37,7 +37,7 @@
 
 
 
-## Laravel Events
+## 2.  Laravel Events
 # Observers 
 - Observers in Laravel allow you to listen to events that occur on models. Events that can  occur, such as creating, updating, deleting
 - Create an observer : php artisan make:observer PostObserver --model=Post
@@ -52,7 +52,7 @@ Localization in Laravel allows you to manage and display your application in dif
 - You can set the default locale in the config/app.php file by modifying the locale option: ie to en or es, or change in .env
 - reference it in your views
 
-## ELOQUENT RELATIONSHIPS 
+## 3. ELOQUENT RELATIONSHIPS 
 
 
 Eloquent is the Object-Relational Mapper (ORM) included with Laravel. It provides a simple and intuitive Active Record implementation for working with your database. Each database table has a corresponding "Model" that is used to interact with that table. Eloquent models allow you to query for data in your tables, as well as insert new records into the table.
@@ -84,4 +84,33 @@ In Laravel, a relationship is a way to define the connection between two databas
 ## Add data to your database for testing, Add Tags to tags table
 - capture name ( add 4 tags)
 - Test the many to many relationships
+
+
+# 4. CSRF protection
+- Cross-Site Request Forgery (CSRF) protection is a security measure to prevent unauthorized commands from being transmitted from a user that the web application trusts. Laravel provides built-in CSRF protection to guard against these types of attacks.
+
+## How it works
+- Laravel automatically generates a CSRF token for each active user session managed by the application.
+- This token is stored in the session and can be accessed using the csrf_token() helper function.
+- When creating forms in Laravel, you can include the CSRF token as a hidden input field. This can be done using the @csrf Blade directive.
+- The @csrf directive will generate a hidden input field with the CSRF token value.
+- When a form is submitted, Laravel automatically verifies that the request includes a valid CSRF token.
+- This verification is done by checking the token submitted with the form against the token stored in the session.
+- If the tokens do not match, the request is rejected with a 419 HTTP status code, indicating that the CSRF token verification failed.
+- By using Laravel's built-in CSRF protection, you can help secure your application against CSRF attacks if tokens done match, the request is rejected.
+
+## Test the csrf token
+- Go to your form and insert the @csrf 
+- Go to controller and die dump the request on store method dd($request->all());
+- Inspect the browser code , with Dev Tools , and View page source :: check if token exists
+- check if token in dd is same as token when you view page source
+
+
+
+## Form input validation
+- php artisan make:request StoreProductRequest
+- Add custom rules and messages
+- Import the use App\Http\Requests\StoreProductRequest in your Product Controller
+- Pick the validations from the Products/Create and test
+- 
 
