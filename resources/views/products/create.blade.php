@@ -17,7 +17,7 @@
             @csrf
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" name="name" class="form-control"> <br>
+                <input type="text" name="name" {{ old('name') }} class="form-control"> <br>
                 @if ($errors->has('name'))
                     <div class="alert alert-danger" role="alert">
 

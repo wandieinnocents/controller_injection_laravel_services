@@ -104,7 +104,7 @@ In Laravel, a relationship is a way to define the connection between two databas
 - Go to controller and die dump the request on store method dd($request->all());
 - Inspect the browser code , with Dev Tools , and View page source :: check if token exists
 - check if token in dd is same as token when you view page source
-
+- check sample file in csrf_attacks/csrf_attacks.blade.php
 
 
 ## Form input validation
@@ -112,5 +112,20 @@ In Laravel, a relationship is a way to define the connection between two databas
 - Add custom rules and messages
 - Import the use App\Http\Requests\StoreProductRequest in your Product Controller
 - Pick the validations from the Products/Create and test
-- 
 
+
+## ERROR HANDLING
+- Using validations , test in ProductController@store
+- Exeption using Try Catch : Test in PostController@show, delete
+- Using Logs ( check : PostObserver.php and test logging)
+- Error Custom Views/Pages
+
+
+## Custom error pages
+. create an error file in : resources/views/errors
+. create 404.blade.php
+. create 500.blade.php
+
+## Testing Error pages
+- put a wrong page route to test 404
+- rename .env to .env2 to create a server error 500

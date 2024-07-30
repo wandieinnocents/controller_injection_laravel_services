@@ -16,6 +16,9 @@ class PostObserver
 
     public function creating(Post $post)
     {
+
+       
+
         //check 1
         if (empty($post->title)) {
             $post->title = 'Random title if empty';
